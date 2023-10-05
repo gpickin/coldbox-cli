@@ -64,6 +64,7 @@ component extends="coldbox-cli.models.BaseCommand" {
 	 * @specsDirectory    Your specs directory. Only used if tests is true
 	 * @api               If true, this will generate api resources, else normal html resources
 	 * @force             Force the generation of the resource, even if it exists
+	 * @open              Open the file once generated
 	 */
 	function run(
 		required resource,
@@ -89,7 +90,8 @@ component extends="coldbox-cli.models.BaseCommand" {
 		boolean api          = false,
 		boolean force        = false,
 		boolean migration    = false,
-		boolean seeder       = false
+		boolean seeder       = false,
+		boolean open       = false
 	){
 		// Normalize paths
 		arguments.specsDirectory   = resolvePath( arguments.specsDirectory );
